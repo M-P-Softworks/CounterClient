@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="bold_margin">24dp</dimen>
+    <dimen name="regular_margin">16dp</dimen>
+    <dimen name="slim_margin">8dp</dimen>
+    <dimen name="thin_mangin">4dp</dimen>
+
+    <dimen name="bold_padding">24dp</dimen>
+    <dimen name="regular_padding">16dp</dimen>
+    <dimen name="slim_padding">8dp</dimen>
+    <dimen name="thin_padding">4dp</dimen>
+
+    <dimen name="nav_header_height">170dp</dimen>
+</resources>

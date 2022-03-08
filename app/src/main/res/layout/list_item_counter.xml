@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clicker_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/slim_margin"
+    android:layout_marginLeft="@dimen/slim_margin"
+    android:layout_marginRight="@dimen/slim_margin"
+    android:checkable="false"
+    android:clickable="true"
+    android:focusable="true"
+    style="@style/MatCardStyle">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/item_clicker_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_sqare_filled"
+            android:layout_gravity="start|center"
+            android:layout_marginRight="@dimen/slim_margin"
+            android:layout_marginLeft="@dimen/slim_margin"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.75"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/item_clicker_title"
+                style="@style/Theme.CounterClient.TitleStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Title "
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/item_clicker_sub"
+                style="@style/Theme.CounterClient.SubtitleStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Subtitle" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/item_clicker_count"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:text="TextView" />
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
