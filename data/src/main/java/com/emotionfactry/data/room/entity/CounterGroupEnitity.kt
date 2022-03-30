@@ -1,5 +1,6 @@
-package com.emotionfactry.data.room.dao
+package com.emotionfactry.data.room.entity
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.util.*
@@ -7,8 +8,12 @@ import java.util.*
 @Entity
 data class CounterGroupEntity(
     @PrimaryKey
+    @ColumnInfo(name = "ID")
     val id: UUID,
+    @ColumnInfo(name = "title")
     val title:String,
+    @ColumnInfo(name = "color")
     val color: Int,
+    @ColumnInfo(name = "listColumn")
     val listCounter: List<CounterEntity>?
 )
