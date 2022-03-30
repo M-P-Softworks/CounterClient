@@ -1,3 +1,3 @@
-package com.emotionfactry.domain.model
+package com.emotionfactry.data.model
 
 data class CounterList(val counter: Counter)

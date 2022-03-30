@@ -1,17 +1,13 @@
-package com.emotionfactry.domain.model
-
-import com.emotionfactry.domain.R
+package com.emotionfactry.data.model
 
 data class Counter (
     var title: String?,
     var value: Long?,
-    var group: CounterGroup?,
     val canDecrease: Boolean? = false,
 ) {
     init{
         getRelevantTitle()
         setDefaultValue()
-        setDefaultGroup()
     }
 
     private fun getRelevantTitle(){
@@ -24,8 +20,8 @@ data class Counter (
             this.value = value.let{0}
     }
 
-    private fun setDefaultGroup() {
+/*    private fun setDefaultGroup() {
         if (group == null)
             group = CounterGroup(title = "No Group", color = com.google.android.material.R.color.m3_ref_palette_dynamic_neutral40)
-    }
+    }*/
 }
