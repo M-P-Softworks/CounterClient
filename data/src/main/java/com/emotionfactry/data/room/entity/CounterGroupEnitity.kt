@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.util.*
 
-@Entity
+@Entity (tableName = "CounterGroups")
 data class CounterGroupEntity(
     @PrimaryKey
     @ColumnInfo(name = "ID")
@@ -13,7 +13,5 @@ data class CounterGroupEntity(
     @ColumnInfo(name = "title")
     val title:String,
     @ColumnInfo(name = "color")
-    val color: Int,
-    @ColumnInfo(name = "listColumn")
-    val listCounter: List<CounterEntity>?
+    val color: Int
 )

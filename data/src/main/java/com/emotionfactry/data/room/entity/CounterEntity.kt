@@ -5,15 +5,17 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.util.*
 
-@Entity(tableName = "counter")
+@Entity(tableName = "Counter")
 data class CounterEntity (
     @PrimaryKey
     @ColumnInfo(name = "ID")
     val id: UUID,
-    @ColumnInfo(name = "title")
+    @ColumnInfo(name = "Title")
     val title: String?,
-    @ColumnInfo(name = "value")
+    @ColumnInfo(name = "Value")
     val value: Long?,
-    @ColumnInfo(name = "canDecrease")
+    @ColumnInfo(name = "CanDecrease")
     val canDecrease: Boolean? = false,
+    @ColumnInfo(name = "GroupID")
+    val groupID: UUID
 )
