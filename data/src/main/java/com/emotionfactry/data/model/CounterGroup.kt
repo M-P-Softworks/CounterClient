@@ -1,7 +1,10 @@
 package com.emotionfactry.data.model
 
+import java.util.*
+
 data class CounterGroup(
-    public val title:String,
-    public val color: Int,
-    public val listCounter: List<Counter>?
+    val id: UUID,
+    val title:String,
+    val color: Int,
+    val listCounter: List<Counter>?
 )

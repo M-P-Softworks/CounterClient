@@ -9,19 +9,18 @@ import javax.inject.Inject
 
 class CounterDBRepoImpl @Inject constructor(private val counterDao: CounterDao) : CounterDBRepository {
     override fun getCountersForGroup(group: CounterGroup): List<Counter> {
-       // counterDao.getCurrentCounters()
-        TODO("Not yet implemented")
+        return counterDao.getCurrentCounters(group.id)
     }
 
     override fun inputCounter(counter: Counter) {
-        TODO("Not yet implemented")
+        counterDao.insertNewCounter(counter)
     }
 
     override fun getGroups(): List<CounterGroup> {
-        TODO("Not yet implemented")
+        return counterDao.getGroups()
     }
 
     override fun inputEmptyGroup(group: CounterGroup) {
-        TODO("Not yet implemented")
+        counterDao.insertNewCounterGroup(group)
     }
 }

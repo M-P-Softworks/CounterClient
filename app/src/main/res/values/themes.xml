@@ -46,4 +46,9 @@
     <style name="FragmentStyle" parent="Widget.AppCompat.TextView">
         <item name="backgroundColor">@color/mainDarkColor</item>
     </style>
+
+    <style name="CounterValueStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">36dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>

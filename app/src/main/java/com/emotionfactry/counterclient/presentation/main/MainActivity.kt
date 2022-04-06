@@ -1,4 +1,4 @@
-package com.emotionfactry.counterclient.presentation.main.activity
+package com.emotionfactry.counterclient.presentation.main
 
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
