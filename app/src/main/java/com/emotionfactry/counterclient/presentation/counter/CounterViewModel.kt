@@ -14,7 +14,6 @@ class CounterViewModel @Inject constructor(
     val counterValue: LiveData<Long> = _counterValue
 
     fun  incrementValue(){
-        counterUseCase.
     }
 
     fun decrementValue(){
