@@ -9,10 +9,11 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import com.emotionfactry.counterclient.R
 import com.emotionfactry.counterclient.databinding.FragmentCounterBinding
 import com.emotionfactry.counterclient.databinding.FragmentSettingsBinding
 
-class CounterFragment : Fragment() {
+class CounterFragment : Fragment(R.layout.fragment_counter) {
 
     private lateinit var binding: FragmentCounterBinding
     private val viewModel: CounterViewModel by viewModels()
