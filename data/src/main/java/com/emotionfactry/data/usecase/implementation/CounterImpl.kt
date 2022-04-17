@@ -14,6 +14,7 @@ class CounterImpl : CounterUseCase {
 
     override fun update(): Counter {
 //        TODO("Not yet implemented")
+        return Counter()
     }
 
 }
