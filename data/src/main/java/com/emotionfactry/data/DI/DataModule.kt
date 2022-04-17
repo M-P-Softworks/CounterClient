@@ -17,5 +17,5 @@ internal class DataModule {
 
     @Provides
     @Singleton
-    fun provideCounerDao(db: CounterDB): CounterDao  = db.counterDao()
+    fun provideCounterDao(db: CounterDB): CounterDao  = db.counterDao()
 }

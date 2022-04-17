@@ -23,4 +23,6 @@ class CounterDBRepoImpl @Inject constructor(private val counterDao: CounterDao) 
     override fun inputEmptyGroup(group: CounterGroup) {
         counterDao.insertNewCounterGroup(group)
     }
+
+    //private fun CounterDao.toCDao()
 }

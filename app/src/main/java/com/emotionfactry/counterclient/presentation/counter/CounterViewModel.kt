@@ -17,7 +17,7 @@ class CounterViewModel @Inject constructor(
     }
 
     fun decrementValue(){
-
+        counterUseCase.increment()
     }
 
     fun updateValue(){
