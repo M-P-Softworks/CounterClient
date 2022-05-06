@@ -9,7 +9,8 @@ import javax.inject.Inject
 
 class CounterDBRepoImpl @Inject constructor(private val counterDao: CounterDao) : CounterDBRepository {
     override fun getCountersForGroup(group: CounterGroup): List<Counter> {
-        return counterDao.getCurrentCounters(group.id)
+        val x = counterDao.getCurrentCounters(group.id)
+        return listOf<Counter>().apply { }
     }
 
     override fun inputCounter(counter: Counter) {
@@ -23,6 +24,4 @@ class CounterDBRepoImpl @Inject constructor(private val counterDao: CounterDao) 
     override fun inputEmptyGroup(group: CounterGroup) {
         counterDao.insertNewCounterGroup(group)
     }
-
-    //private fun CounterDao.toCDao()
 }
