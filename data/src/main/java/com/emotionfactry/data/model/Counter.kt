@@ -3,7 +3,7 @@ package com.emotionfactry.data.model
 import java.util.*
 
 data class Counter (
-    var id: UUID?,
+    var id: UUID = UUID.randomUUID(),
     var title: String?,
     var value: CounterValue,
     val canDecrease: Boolean? = false,

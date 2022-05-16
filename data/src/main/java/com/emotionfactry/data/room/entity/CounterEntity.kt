@@ -13,7 +13,7 @@ data class CounterEntity (
     @ColumnInfo(name = "Title")
     val title: String?,
     @ColumnInfo(name = "Value")
-    val value: Long?,
+    val value: Number?,
     @ColumnInfo(name = "CanDecrease")
     val canDecrease: Boolean? = false,
     @ColumnInfo(name = "GroupID")
