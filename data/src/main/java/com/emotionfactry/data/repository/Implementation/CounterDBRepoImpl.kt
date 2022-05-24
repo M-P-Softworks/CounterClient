@@ -15,7 +15,11 @@ class CounterDBRepoImpl @Inject constructor(private val counterDao: CounterDao) 
     override fun getCountersForGroup(group: CounterGroup): List<Counter> {
         val resList = mutableListOf<Counter>()
         val x = counterDao.getCurrentCounters(group.id)
-        x.forEach { it. }
+        x.forEach {
+            Counter(it.id, it.title, CounterValue(it.value),
+                it.canDecrease, )
+            resList.add(
+            )}
         return listOf<Counter>().apply { }
     }
 
@@ -45,7 +49,11 @@ class CounterDBRepoImpl @Inject constructor(private val counterDao: CounterDao) 
         return CounterGroup(id,title,color,)
     }
 
-    private fun isDouble(n: Number){
+    private fun isFloat(n: Number): Boolean{
+        return when(n){
+            is Float -> { }
+        }
+
 
     }
 }
