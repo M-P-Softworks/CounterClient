@@ -16,3 +16,4 @@ rootProject.name = "CounterClient"
 include ':app'
 include ':data'
 include ':domain(maybe_not_need)'
+include ':presenatation'
