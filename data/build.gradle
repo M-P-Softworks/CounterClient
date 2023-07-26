@@ -30,6 +30,7 @@ android {
         jvmTarget = '1.8'
     }
     buildToolsVersion '33.0.2'
+    namespace 'com.emotionfactry.data'
 }
 
 dependencies {
