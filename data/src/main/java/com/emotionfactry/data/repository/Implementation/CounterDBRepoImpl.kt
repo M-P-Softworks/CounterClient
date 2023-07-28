@@ -18,21 +18,27 @@ class CounterDBRepoImpl @Inject constructor(private val counterDao: CounterDao) 
         x.forEach {
             Counter(it.id, it.title, CounterValue(it.value),
                 it.canDecrease, )
-            resList.add(
-            )}
+//            resList.add(
+//            )
+        }
         return listOf<Counter>().apply { }
     }
 
-    override fun inputCounter(counter: Counter, group: CounterGroup) {
+    override fun inputCounter(counter: Counter) {
+        TODO("Not yet implemented")
+    }
+
+    fun inputCounter(counter: Counter, group: CounterGroup) {
         counterDao.insertNewCounter(counter.toCounterEntity(group))
     }
 
     override fun getGroups(): List<CounterGroup> {
-        return counterDao.getGroups()
+        counterDao.getGroups()
+        return emptyList()
     }
 
     override fun inputEmptyGroup(group: CounterGroup) {
-        counterDao.insertNewCounterGroup(group)
+//        counterDao.insertNewCounterGroup(group)
     }
 
     //------- private methods -------------------------------------------------------
@@ -46,13 +52,12 @@ class CounterDBRepoImpl @Inject constructor(private val counterDao: CounterDao) 
     }
 
     private fun CounterGroupEntity.toCounterGroup(): CounterGroup{
-        return CounterGroup(id,title,color,)
+        TODO("Not yet implemented")
+//        return CounterGroup(id,title, )
     }
 
     private fun isFloat(n: Number): Boolean{
-        return when(n){
-            is Float -> { }
-        }
+        return false
 
 
     }

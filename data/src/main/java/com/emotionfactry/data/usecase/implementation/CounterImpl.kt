@@ -12,9 +12,9 @@ class CounterImpl : CounterUseCase {
 //        TODO("Not yet implemented")
     }
 
-    override fun update(): Counter {
+    override fun update(): Unit {
 //        TODO("Not yet implemented")
-        return Counter()
+//        return Counter()
     }
 
 }
