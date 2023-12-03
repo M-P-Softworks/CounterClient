@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.emotionfactry.data"
+    namespace = "com.emotionfactry.presentation"
     compileSdk = 33
 
     defaultConfig {
@@ -19,21 +19,39 @@ android {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro")
+                "proguard-rules.pro"
+            )
         }
+    }
+    buildFeatures {
+        compose = true
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+    composeOptions{
+        kotlinCompilerExtensionVersion = "1.5.3"
+    }
     kotlinOptions {
         jvmTarget = "17"
     }
-    buildToolsVersion = "33.0.2"
 }
 
 dependencies {
     implementation(catalog.core.ktx)
-    implementation (catalog.androidx.appcompat.appcompat)
+    implementation(catalog.androidx.appcompat.appcompat)
 
+    //navigation
+    implementation(catalog.nav.fragment)
+    implementation(catalog.nav.ui)
+
+    //compose
+    implementation(catalog.compose.activity)
+    implementation(catalog.compose.ui)
+    implementation(catalog.compose.runtime)
+    implementation(catalog.compose.navigation)
+    implementation(catalog.compose.ui.tooling)
+    implementation(catalog.compose.ui.tooling.preview)
+    implementation(catalog.compose.material3)
 }

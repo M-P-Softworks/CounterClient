@@ -1,24 +1,26 @@
 plugins {
-    id(libs.plugins.android.application.get().pluginId)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
 }
 
 android {
-    namespace = "com.emotionfactry.counterclient"
+    namespace = "com.emotionfactry.domain"
     compileSdk = 33
 
     defaultConfig {
         minSdk = 26
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
     compileOptions {
@@ -28,19 +30,10 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
-    buildFeatures{
-        viewBinding = true
-    }
     buildToolsVersion = "33.0.2"
 }
 
 dependencies {
     implementation(catalog.core.ktx)
-    implementation (catalog.androidx.appcompat.appcompat)
-
-    //project
-    implementation(project(":data"))
-    implementation(project(":domain"))
-    implementation(project(":presentation"))
-
+    implementation(catalog.androidx.appcompat.appcompat)
 }
