@@ -1,3 +1,4 @@
+/*
 package com.emotionfactry.data.model
 
 import java.util.*
@@ -25,4 +26,4 @@ data class Counter (
         else value.v = 0L
 
     }
-}
+}*/

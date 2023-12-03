@@ -1,11 +1,10 @@
+/*
 package com.emotionfactry.data.room.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.emotionfactry.data.model.Counter
-import com.emotionfactry.data.model.CounterGroup
 import com.emotionfactry.data.room.entity.CounterEntity
 import com.emotionfactry.data.room.entity.CounterGroupEntity
 import java.util.*
@@ -29,4 +28,4 @@ interface CounterDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertNewCounterGroup(insert: CounterGroupEntity)
-}
+}*/

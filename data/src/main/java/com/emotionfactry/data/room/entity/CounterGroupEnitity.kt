@@ -1,3 +1,4 @@
+/*
 package com.emotionfactry.data.room.entity
 
 import androidx.room.ColumnInfo
@@ -14,4 +15,4 @@ data class CounterGroupEntity(
     val title:String,
     @ColumnInfo(name = "color")
     val color: Int
-)
+)*/

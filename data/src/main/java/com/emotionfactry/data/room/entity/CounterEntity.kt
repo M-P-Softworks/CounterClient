@@ -1,3 +1,4 @@
+/*
 package com.emotionfactry.data.room.entity
 
 import androidx.room.ColumnInfo
@@ -18,4 +19,4 @@ data class CounterEntity (
     val canDecrease: Boolean? = false,
     @ColumnInfo(name = "GroupID")
     val groupID: UUID
-)
+)*/

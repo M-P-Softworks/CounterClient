@@ -1,3 +1,4 @@
+/*
 package com.emotionfactry.data.repository
 
 import com.emotionfactry.data.model.Counter
@@ -9,4 +10,4 @@ interface CounterDBRepository {
 
     fun getGroups(): List<CounterGroup>
     fun inputEmptyGroup(group: CounterGroup)
-}
+}*/

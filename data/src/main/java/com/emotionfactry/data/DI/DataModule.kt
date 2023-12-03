@@ -1,3 +1,4 @@
+/*
 package com.emotionfactry.data.DI
 
 import com.emotionfactry.data.room.CounterDB
@@ -18,4 +19,4 @@ internal class DataModule {
     @Provides
     @Singleton
     fun provideCounterDao(db: CounterDB): CounterDao  = db.counterDao()
-}
+}*/

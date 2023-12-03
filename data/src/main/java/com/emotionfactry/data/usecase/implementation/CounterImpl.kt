@@ -1,3 +1,4 @@
+/*
 package com.emotionfactry.data.usecase.implementation
 
 import com.emotionfactry.data.model.Counter
@@ -17,4 +18,4 @@ class CounterImpl : CounterUseCase {
 //        return Counter()
     }
 
-}
+}*/

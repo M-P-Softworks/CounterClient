@@ -1,3 +1,4 @@
+/*
 package com.emotionfactry.data.DI
 
 import com.emotionfactry.data.usecase.CounterUseCase
@@ -14,4 +15,4 @@ interface UseCasesModule {
     @Binds
     fun provideCounterUseCase(useCase: CounterImpl): CounterUseCase
 
-}
+}*/

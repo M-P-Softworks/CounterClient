@@ -1,3 +1,4 @@
+/*
 package com.emotionfactry.data.room
 
 import androidx.room.*
@@ -13,4 +14,4 @@ import com.emotionfactry.data.room.entity.CounterGroupEntity
 internal abstract class CounterDB : RoomDatabase() {
 
     abstract fun counterDao(): CounterDao
-}
+}*/
