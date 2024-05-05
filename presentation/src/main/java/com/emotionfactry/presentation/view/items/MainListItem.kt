@@ -48,7 +48,7 @@ internal fun MainListItem(
             .padding(all = AppTheme.dimensions.paddingM),
         verticalAlignment = Alignment.CenterVertically)
     {
-        ItemGroupImage(listItem.itemGroupImage)
+        SettingsImage(listItem.itemGroupImage)
         ItemTextContainer(
             modifier = Modifier
                 .padding(horizontal = AppTheme.dimensions.paddingM)
@@ -60,7 +60,7 @@ internal fun MainListItem(
 }
 
 @Composable
-private fun ItemGroupImage(itemGroupImage: CounterGroupImage) {
+private fun SettingsImage(itemGroupImage: CounterGroupImage) {
      Image(
         painter = painterResource(id = itemGroupImage.imageResource),
         contentDescription = null,
@@ -113,7 +113,7 @@ private fun ItemCurrentValue(value: String) {
     Text(
         value,
         maxLines = 1,
-        style = AppTheme.typography.h5,
+        style = AppTheme.typography.h6,
         textAlign = TextAlign.Justify
     )
 }

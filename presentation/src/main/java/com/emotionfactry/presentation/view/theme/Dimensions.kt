@@ -1,4 +1,4 @@
-§package com.emotionfactry.presentation.view.theme
+package com.emotionfactry.presentation.view.theme
 
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp

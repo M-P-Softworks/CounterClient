@@ -15,6 +15,7 @@ import com.emotionfactry.presentation.view.theme.CounterClientTheme
 class CounterActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        actionBar?.hide()
         setContent {
             CounterClientTheme {
                 // A surface container using the 'background' color from the theme
@@ -22,22 +23,9 @@ class CounterActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    MainScreen()
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    CounterClientTheme {
-        Greeting("Android")
     }
 }

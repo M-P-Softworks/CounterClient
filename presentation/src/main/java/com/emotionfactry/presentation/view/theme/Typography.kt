@@ -35,14 +35,14 @@ data class AppTypography(
     ),
     val h5: TextStyle = TextStyle(
         fontFamily = monserrat,
-        fontWeight = FontWeight.Normal,
+        fontWeight = FontWeight.Bold,
         fontSize = 24.sp,
         letterSpacing = 0.sp
     ),
     val h6: TextStyle = TextStyle(
         fontFamily = monserrat,
         fontWeight = FontWeight.Normal,
-        fontSize = 20.sp,
+        fontSize = 24.sp,
         letterSpacing = 0.15.sp
     ),
     val subtitle1: TextStyle = TextStyle(
