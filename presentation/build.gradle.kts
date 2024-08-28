@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.emotionfactry.presentation"
+    namespace = "com.mpsoftworks.presentation"
     compileSdk = 33
 
     defaultConfig {

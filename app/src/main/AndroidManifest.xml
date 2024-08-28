@@ -7,7 +7,7 @@
         android:supportsRtl="true"
         android:name=".CounterClientApp">
         <activity
-            android:name="com.emotionfactry.presentation.view.main.CounterActivity"
+            android:name="com.mpsoftworks.presentation.view.main.CounterActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.emotionfactry.counterclient"
+    namespace = "com.mpsoftworks.counterclient"
     compileSdk = 33
 
     defaultConfig {
