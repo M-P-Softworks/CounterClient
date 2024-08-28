@@ -41,6 +41,7 @@ android {
 dependencies {
     implementation(catalog.core.ktx)
     implementation(catalog.androidx.appcompat.appcompat)
+    implementation(catalog.hilt)
 
     //navigation
     implementation(catalog.nav.fragment)

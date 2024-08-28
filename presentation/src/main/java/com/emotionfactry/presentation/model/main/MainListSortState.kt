@@ -23,6 +23,4 @@ data class SortBottonState (
     val sortDirection: Int
 )
 
-private val SortButtonExample = SortBottonState(
-    R.
-)
+private val SortButtonExample = SortBottonState(0, 0)

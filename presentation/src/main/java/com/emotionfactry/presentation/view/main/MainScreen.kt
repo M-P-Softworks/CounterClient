@@ -43,6 +43,9 @@ import com.emotionfactry.presentation.view.theme.ThemeEntities
 import com.emotionfactry.presentation.view.theme.getColor
 import kotlinx.coroutines.flow.Flow
 
+/**
+ * ToDo("")
+ */
 @Composable
 internal fun MainScreen() {
     val viewModel: MainScreenViewModel by lazy { MainScreenViewModel() }
@@ -68,7 +71,7 @@ internal fun MainScreen() {
                 buttonIcon = R.drawable.ic_add,
                 onAddClick = onAction
             )
-             },
+        },
         floatingActionButtonPosition = FabPosition.Center
 
     ) { innerPadding ->
@@ -129,20 +132,20 @@ private fun CounterFloatingButton(
     buttonIcon: Int,
     onAddClick: (MainScreenActions) -> Unit
 ) {
-        FloatingActionButton(
-            modifier = modifier.padding(
-                end = AppTheme.dimensions.paddingL,
-                bottom = AppTheme.dimensions.paddingL
-            ),
-            onClick = { onAddClick.invoke(MainScreenActions.AddButtonPressed) },
-            containerColor = ThemeEntities.BackgroundPrimary0.getColor(),
-            contentColor = ThemeEntities.ElementContentPrimary0.getColor()
-        ) {
-            Icon(
-                imageVector = ImageVector.vectorResource(buttonIcon),
-                contentDescription = null
-            )
-        }
+    FloatingActionButton(
+        modifier = modifier.padding(
+            end = AppTheme.dimensions.paddingL,
+            bottom = AppTheme.dimensions.paddingL
+        ),
+        onClick = { onAddClick.invoke(MainScreenActions.AddButtonPressed) },
+        containerColor = ThemeEntities.BackgroundPrimary0.getColor(),
+        contentColor = ThemeEntities.ElementContentPrimary0.getColor()
+    ) {
+        Icon(
+            imageVector = ImageVector.vectorResource(buttonIcon),
+            contentDescription = null
+        )
+    }
 }
 
 @Composable
@@ -162,7 +165,6 @@ private fun ObserveEvents(events: Flow<MainScreenEvents>) {
         }
     }
 }
-
 
 @Composable
 @Preview

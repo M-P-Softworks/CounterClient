@@ -26,6 +26,9 @@ import com.emotionfactry.presentation.view.theme.AppTheme
 import com.emotionfactry.presentation.view.theme.ThemeEntities
 import com.emotionfactry.presentation.view.theme.getColor
 
+/**
+ * Main list item. Contains Caption, explanatory text, value and group color
+ */
 @Composable
 internal fun MainListItem(
     modifier: Modifier = Modifier,

@@ -25,6 +25,9 @@ import com.emotionfactry.presentation.view.theme.AppTheme
 import com.emotionfactry.presentation.view.theme.ThemeEntities
 import com.emotionfactry.presentation.view.theme.getColor
 
+/**
+ * Settings item.
+ */
 @Composable
 internal fun SettingsItem(
     modifier: Modifier = Modifier,
