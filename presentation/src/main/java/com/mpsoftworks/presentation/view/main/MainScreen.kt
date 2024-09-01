@@ -12,6 +12,7 @@ import androidx.compose.material3.FabPosition
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.ModalNavigationDrawer
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SmallFloatingActionButton
 import androidx.compose.material3.Surface
@@ -32,6 +33,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.NavHostController
 import com.mpsoftworks.presentation.R
 import com.mpsoftworks.presentation.model.main.MainScreenActions
 import com.mpsoftworks.presentation.model.main.MainScreenEvents
@@ -47,7 +49,7 @@ import kotlinx.coroutines.flow.Flow
  * ToDo("")
  */
 @Composable
-internal fun MainScreen() {
+internal fun MainScreen(navController: NavHostController) {
     val viewModel: MainScreenViewModel by lazy { MainScreenViewModel() }
 
     val state = viewModel.mainScreenState.collectAsState()
@@ -170,7 +172,7 @@ private fun ObserveEvents(events: Flow<MainScreenEvents>) {
 @Preview
 private fun Preview() {
     Surface {
-        MainScreen()
+        // MainScreen()
     }
 }
 

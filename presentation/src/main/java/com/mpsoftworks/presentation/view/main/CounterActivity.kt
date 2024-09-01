@@ -10,6 +10,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
+import com.mpsoftworks.presentation.view.navigation.CounterNavGraph
 import com.mpsoftworks.presentation.view.theme.CounterClientTheme
 
 class CounterActivity : ComponentActivity() {
@@ -18,13 +20,15 @@ class CounterActivity : ComponentActivity() {
         actionBar?.hide()
         setContent {
             CounterClientTheme {
-                // A surface container using the 'background' color from the theme
+                /*// A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
                     MainScreen()
-                }
+                }*/
+                val navController = rememberNavController()
+                CounterNavigationDrawer(navController)
             }
         }
     }

@@ -1,5 +1,7 @@
 package com.mpsoftworks.presentation.view.settings
 
-fun SettingsScreen() {
+import androidx.navigation.NavHostController
+
+fun SettingsScreen(navController: NavHostController) {
 
 }
