@@ -1,5 +1,7 @@
 package com.mpsoftworks.presentation.view.counter
 
-fun CounterScreen() {
+import androidx.navigation.NavHostController
+
+fun CounterScreen(navController: NavHostController) {
 
 }
