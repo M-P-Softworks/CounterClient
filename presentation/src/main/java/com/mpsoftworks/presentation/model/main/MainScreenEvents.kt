@@ -1,5 +1,8 @@
 package com.mpsoftworks.presentation.model.main
 
 sealed interface MainScreenEvents {
-    object ShowSideMenuBar : MainScreenEvents
+    object ChandeSideMenuState : MainScreenEvents
+    object NavigateToNewCounter : MainScreenEvents
+    object NavigateToExistingCounter : MainScreenEvents
+
 }
