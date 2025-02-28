@@ -1,22 +1,33 @@
-/*
 package com.mpsoftworks.data.room.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import java.util.*
+import java.util.UUID
 
-@Entity(tableName = "Counter")
+/**
+ * Entity of counter entity.
+ * @property id UUID identified each counter
+ * @property title counter title
+ * @property value counter value
+ * @property canDecrease can value be decreased
+ * @property groupId UUID identified each group
+ */
+@Entity(tableName = "counters")
 data class CounterEntity (
     @PrimaryKey
-    @ColumnInfo(name = "ID")
+    @ColumnInfo(name = "id")
     val id: UUID,
-    @ColumnInfo(name = "Title")
+
+    @ColumnInfo(name = "title")
     val title: String?,
-    @ColumnInfo(name = "Value")
+
+    @ColumnInfo(name = "value")
     val value: Number?,
-    @ColumnInfo(name = "CanDecrease")
+
+    @ColumnInfo(name = "can_decrease")
     val canDecrease: Boolean? = false,
-    @ColumnInfo(name = "GroupID")
-    val groupID: UUID
-)*/
+
+    @ColumnInfo(name = "group_id")
+    val groupId: UUID
+    )

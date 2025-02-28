@@ -25,7 +25,7 @@ class CounterDBRepoImpl @Inject constructor(private val counterDao: CounterDao) 
         return listOf<Counter>().apply { }
     }
 
-    override fun inputCounter(counter: Counter) {
+    override fun inputCounter(counter: Counter)  {
         TODO("Not yet implemented")
     }
 

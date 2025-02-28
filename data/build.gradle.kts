@@ -35,5 +35,6 @@ android {
 dependencies {
     implementation(catalog.core.ktx)
     implementation (catalog.androidx.appcompat.appcompat)
-
+    implementation(catalog.room.ktx)
+    implementation(catalog.room.runtime)
 }

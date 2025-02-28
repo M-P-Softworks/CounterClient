@@ -1,4 +1,10 @@
 /*
 package com.mpsoftworks.data.model
 
-data class CounterList(val counter: Counter)*/
+*/
+/**
+ * Class cont
+ *//*
+
+data class CounterList(val counter: Counter)
+*/

@@ -19,7 +19,7 @@ lifecycle = "2.6.1"
 orbit = "4.6.1"
 org-jetbrains-kotlinx = "1.6.4"
 org-mockito = "4.8.0"
-room = "2.5.0"
+room = "2.5.2"
 core-ktx = "1.9.0"
 junit = "4.13.2"
 androidx-test-ext-junit = "1.1.5"
@@ -88,6 +88,7 @@ retrofit-converter-jackson = { module = "com.squareup.retrofit2:converter-jackso
 retrofit-rxjava2-adapter = { module = "com.squareup.retrofit2:adapter-rxjava2", version.ref = "com-squareup-retrofit2" }
 room-kapt = { module = "androidx.room:room-compiler", version.ref = "room" }
 room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
+room-runtime = { module = "androidx.room:room-runtime", version = "room" }
 viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
 junit-junit = { group = "junit", name = "junit", version.ref = "junit" }
