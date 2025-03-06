@@ -1,0 +1,5 @@
+id,title,value,can_decrease,group_id
+6f9619ff-8b86-d011-b42d-00cf4fc964ff,Coffee Cups,3,true,550e8400-e29b-41d4-a716-446655440000
+16fd2706-8baf-433b-82eb-8c7fada847da,Books Read,5,false,123e4567-e89b-12d3-a456-426614174000
+2c6f14ec-2b39-4a14-95e5-2f6e5d5e8f88,Push-ups,50,true,987fbc97-4bed-5078-8f07-9141ba07c9f3
+a8a4d3e8-4f6b-4f34-b3de-8eb4cd1f3f00,Grocery Items,15,false,c9bf1234-59d6-411e-9aaf-23d1f6dffa14

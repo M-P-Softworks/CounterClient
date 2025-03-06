@@ -14,7 +14,7 @@ import java.util.UUID
  * @property groupId UUID identified each group
  */
 @Entity(tableName = "counters")
-data class CounterEntity (
+data class CounterEntity(
     @PrimaryKey
     @ColumnInfo(name = "id")
     val id: UUID,
@@ -30,4 +30,4 @@ data class CounterEntity (
 
     @ColumnInfo(name = "group_id")
     val groupId: UUID
-    )
+)

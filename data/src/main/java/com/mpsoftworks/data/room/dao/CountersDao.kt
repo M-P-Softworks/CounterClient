@@ -1,6 +1,7 @@
 package com.mpsoftworks.data.room.dao
 
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
@@ -14,33 +15,46 @@ import java.util.UUID
 @Dao
 interface CountersDao {
     /**
-     *
+     * Get all created counters
      */
     @Query("SELECT * FROM COUNTERS")
     fun getCounters(): List<CounterEntity>
 
     /**
-     *
+     * Get all created groups
      */
     @Query("SELECT * FROM COUNTER_GROUP")
     fun getGroups(): List<CounterGroupEntity>
 
+    //TODO("remake using custom sql query with counterID s")
     /**
-     *
+     * Delete list of [counters]
      */
-    @Query("SELECT * FROM COUNTERS WHERE COUNTERS.group_id = :griupID")
-    fun getCurrentCounters(griupID: UUID): List<CounterEntity>
+    @Delete
+    fun deleteCounterList(counters: List<CounterEntity>)
 
     /**
-     *
+     * Get list of counters from selected [groupID]
+     */
+    @Query("SELECT * FROM COUNTERS WHERE COUNTERS.group_id = :groupID")
+    fun getCurrentCounters(groupID: UUID): List<CounterEntity>
+
+    /**
+     * Insert new or udates existing counter [entity]
      */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertOrUpdateCounter(insert: CounterEntity)
+    fun insertOrUpdateCounter(entity: CounterEntity)
 
     /**
-     *
+     * Insert new or updates existing group [entity]
      */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertOrUpdateGroup(insert: CounterGroupEntity)
+    fun insertOrUpdateGroup(entity: CounterGroupEntity)
 
+    //TODO("remake using custom sql query with groupsID s")
+    /**
+     * Delete list of [groups]
+     */
+    @Delete
+    fun deleteGroupList(groups: List<CounterGroupEntity>)
 }

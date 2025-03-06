@@ -12,26 +12,9 @@ import java.util.*
  * @property isFloat is counter value float
  */
 data class Counter (
-    var id: UUID = UUID.randomUUID(),
-    var title: String?,
-    var value: CounterValue,
+    val id: UUID = UUID.randomUUID(),
+    val title: String?,
+    val value: CounterValue,
     val canDecrease: Boolean? = false,
     val isFloat: Boolean? = false
-) {
-    init{
-        getRelevantTitle()
-        setDefaultValue()
-    }
-
-    private fun getRelevantTitle(){
-        if (title == null)
-            this.title = title.let{"Default title"}
-    }
-
-    private fun setDefaultValue(){
-        if (isFloat == true)
-        value.v = 0F
-        else value.v = 0L
-
-    }
-}
+)

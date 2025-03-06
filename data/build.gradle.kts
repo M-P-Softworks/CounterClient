@@ -36,5 +36,6 @@ dependencies {
     implementation(catalog.core.ktx)
     implementation (catalog.androidx.appcompat.appcompat)
     implementation(catalog.room.ktx)
+    implementation(catalog.hilt)
     implementation(catalog.room.runtime)
 }
