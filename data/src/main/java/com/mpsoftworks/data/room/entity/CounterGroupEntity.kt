@@ -10,6 +10,7 @@ import java.util.UUID
  * @property id UUID identified each group
  * @property title group title
  * @property color group color
+ * @property bitmapArray group icon
 */
 @Entity(tableName = "counter_group")
 data class CounterGroupEntity (
@@ -21,5 +22,8 @@ data class CounterGroupEntity (
     val title: String?,
 
     @ColumnInfo(name = "color")
-    val color: Int
+    val color: Int,
+
+    @ColumnInfo(name = "bitmap")
+    val bitmapArray: ByteArray
 )

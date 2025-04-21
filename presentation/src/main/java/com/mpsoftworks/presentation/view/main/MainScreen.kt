@@ -24,6 +24,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.NavHostController
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.mpsoftworks.presentation.R
 import com.mpsoftworks.presentation.model.main.MainScreenActions
 import com.mpsoftworks.presentation.model.main.MainScreenEvents
@@ -73,7 +74,7 @@ internal fun MainScreen(
     ) { innerPadding ->
         MainScreenListContent(
             modifier = Modifier.padding(innerPadding),
-            MainListViewModel()
+            hiltViewModel<MainListViewModel>(),
         )
     }
 }
@@ -164,7 +165,7 @@ private fun ObserveEvents(events: Flow<MainScreenEvents>, navController: NavHost
         lifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
             events.collect { event ->
                 when (event) {
-                    MainScreenEvents.ChandeSideMenuState -> coroutineScope { changeDrawerState(drawerState) }
+                    MainScreenEvents.ChangeSideMenuState -> coroutineScope { changeDrawerState(drawerState) }
                     MainScreenEvents.NavigateToExistingCounter -> {
                         navController.navigate(CounterNavDestinations.CounterScreen.route.routeString)
                     }

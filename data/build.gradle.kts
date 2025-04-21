@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.mpsoftworks.data"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         minSdk = 26
@@ -29,7 +29,7 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
-    buildToolsVersion = "33.0.2"
+    buildToolsVersion = "34.0.0"
 }
 
 dependencies {

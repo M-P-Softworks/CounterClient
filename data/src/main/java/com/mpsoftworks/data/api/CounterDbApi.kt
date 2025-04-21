@@ -12,35 +12,35 @@ interface CounterDbApi {
     /**
      * returns list of counters
      */
-    fun getCounterList(counterGroupId: UUID): List<Counter>
+    fun getCounterList(counterGroupId: UUID): Result<List<Counter>>
 
     /**
      * add new counter if [counter] does not exists, otherwise update existing.
      * @return Returns true if new counter was added
      */
-    fun addOrUpdateCounter(counter: Counter, group: CounterGroup): Boolean
+    fun addOrUpdateCounter(counter: Counter, groupId: UUID): Result<Boolean>
 
     /**
      * delete existing [counters]
      */
-    fun deleteCounter(counters: List<Counter>, group: CounterGroup)
+    fun deleteCounters(counters: List<Counter>, groupId: UUID): Result<Unit>
 
     //---------------------------------------------------------------------------------------------
 
     /**
      * returns list of counter groups
      */
-    fun getGroups(): List<CounterGroup>
+    fun getGroups(): Result<List<CounterGroup>>
 
     /**
      * add new group of counters if [group] does not exists, otherwise update existing.
      * @return Returns true if new counter was added
      */
-    fun addOrUpdateGroup(group: CounterGroup): Boolean
+    fun addOrUpdateGroup(group: CounterGroup): Result<Boolean>
 
     /**
      * delete existing [groups]
      */
-    fun deleteGroup(groups: List<CounterGroup>)
+    fun deleteGroup(groups: List<CounterGroup>): Result<Unit>
 
 }

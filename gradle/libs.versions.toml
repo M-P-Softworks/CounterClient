@@ -6,6 +6,7 @@ androidx-compose = "1.4.3"
 androidx-navigation = "2.5.3"
 compose-compiler = "1.5.3"
 com-google-dagger = "2.44"
+hilt-navigation-version = "1.2.0"
 com-squareup-okhttp3 = "4.10.0"
 com-squareup-retrofit2 = "2.9.0"
 io-objectbox = "3.5.1"
@@ -50,6 +51,7 @@ coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-androi
 hilt = { module = "com.google.dagger:hilt-android", version.ref = "com-google-dagger" }
 hilt-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "com-google-dagger" }
 hilt-gradle = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "com-google-dagger" }
+hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hilt-navigation-version" }
 kotlin-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 kotlin-stdlib-jdk8 = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8", version.ref = "kotlin" }
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin-android" }

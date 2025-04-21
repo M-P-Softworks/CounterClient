@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.mpsoftworks.counterclient"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         minSdk = 26
@@ -31,7 +31,7 @@ android {
     buildFeatures{
         viewBinding = true
     }
-    buildToolsVersion = "33.0.2"
+    buildToolsVersion = "34.0.0"
 }
 
 dependencies {

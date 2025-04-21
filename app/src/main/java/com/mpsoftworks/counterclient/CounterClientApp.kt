@@ -11,4 +11,6 @@ class CounterClientApp : Application() {
     private fun setDefaultDBValues(){
 
     }
+
+//    ToDo("create initializer. ")
 }

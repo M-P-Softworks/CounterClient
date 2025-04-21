@@ -62,11 +62,19 @@ internal fun SettingsItem(
 
 @Composable
 private fun SettingsImage(itemGroupImage: CounterGroupImage) {
-    Image(
-        painter = painterResource(id = itemGroupImage.imageResource),
-        contentDescription = null,
-        alignment = Alignment.BottomCenter
-    )
+    if (itemGroupImage.imageResource == null) {
+        Image(
+            painter = painterResource(R.drawable.ic_color_square),
+            contentDescription = null,
+            alignment = Alignment.BottomCenter
+        )
+    } else {
+        Image(
+            bitmap = itemGroupImage.imageResource,
+            contentDescription = null,
+            alignment = Alignment.BottomCenter
+        )
+    }
 }
 
 @Composable
@@ -112,7 +120,7 @@ private fun ItemText(text: String) {
 @Composable
 @Preview
 private fun Preview() {
-    val image = CounterGroupImage(R.drawable.ic_color_square, Color.Green)
+//    val image = CounterGroupImage(R.drawable.ic_color_square, Color.Green)
     Surface {
         Column(Modifier
             .padding(all = 12.dp)

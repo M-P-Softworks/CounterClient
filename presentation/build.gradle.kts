@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.mpsoftworks.presentation"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         minSdk = 26
@@ -36,12 +36,14 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+    buildToolsVersion = "34.0.0"
 }
 
 dependencies {
     implementation(catalog.core.ktx)
     implementation(catalog.androidx.appcompat.appcompat)
     implementation(catalog.hilt)
+    implementation(catalog.hilt.navigation.compose)
 
     //navigation
     implementation(catalog.nav.fragment)
@@ -55,4 +57,9 @@ dependencies {
     implementation(catalog.compose.ui.tooling)
     implementation(catalog.compose.ui.tooling.preview)
     implementation(catalog.compose.material3)
+
+
+    //project
+    implementation(project(":data"))
+    implementation(project(":domain"))
 }

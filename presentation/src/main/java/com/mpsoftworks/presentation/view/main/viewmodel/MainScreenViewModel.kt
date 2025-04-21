@@ -26,7 +26,7 @@ class MainScreenViewModel(
     fun onAction(action: MainScreenActions) {
         when(action){
             MainScreenActions.AddButtonPressed -> sendEvent(MainScreenEvents.NavigateToExistingCounter)
-            MainScreenActions.IconButtonPressed -> sendEvent(MainScreenEvents.ChandeSideMenuState)
+            MainScreenActions.IconButtonPressed -> sendEvent(MainScreenEvents.ChangeSideMenuState)
         }
 
     }

@@ -17,13 +17,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.mpsoftworks.presentation.model.main.MainListState
 import com.mpsoftworks.presentation.view.items.MainListItem
 import com.mpsoftworks.presentation.view.main.viewmodel.MainListViewModel
 import com.mpsoftworks.presentation.view.theme.AppTheme
 
 @Composable
-internal fun MainScreenListContent(
+internal fun  MainScreenListContent(
     modifier: Modifier = Modifier,
     viewModel: MainListViewModel
 ) {
@@ -96,6 +97,6 @@ private fun ListSettings(modifier: Modifier = Modifier) {
 @Composable
 private fun PreviewList() {
     MainScreenListContent(
-        viewModel = MainListViewModel()
+        viewModel = hiltViewModel<MainListViewModel>()
     )
 }

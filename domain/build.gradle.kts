@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.mpsoftworks.domain"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         minSdk = 26
@@ -30,10 +30,18 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
-    buildToolsVersion = "33.0.2"
+    buildToolsVersion = "34.0.0"
 }
 
 dependencies {
+
     implementation(catalog.core.ktx)
     implementation(catalog.androidx.appcompat.appcompat)
+    testImplementation(catalog.junit.junit)
+    implementation(catalog.hilt)
+    androidTestImplementation(catalog.androidx.test.ext.junit)
+    androidTestImplementation(catalog.espresso.core)
+
+    //project
+    implementation(project(":data"))
 }

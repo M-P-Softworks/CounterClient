@@ -1,5 +1,6 @@
 package com.mpsoftworks.data.model
 
+import android.graphics.Bitmap
 import java.util.*
 
 /**
@@ -13,5 +14,6 @@ data class CounterGroup(
     val id: UUID,
     val title:String,
     val color: Int,
+    val bitmap: Bitmap,
     val listCounter: List<Counter>?
 )

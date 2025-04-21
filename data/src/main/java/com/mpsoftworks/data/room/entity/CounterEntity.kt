@@ -8,7 +8,7 @@ import java.util.UUID
 /**
  * Entity of counter entity.
  * @property id UUID identified each counter
- * @property title counter title
+ * @property header counter title
  * @property value counter value
  * @property canDecrease can value be decreased
  * @property groupId UUID identified each group
@@ -20,7 +20,10 @@ data class CounterEntity(
     val id: UUID,
 
     @ColumnInfo(name = "title")
-    val title: String?,
+    val header: String?,
+
+    @ColumnInfo(name = "text")
+    val text: String?,
 
     @ColumnInfo(name = "value")
     val value: Number?,
