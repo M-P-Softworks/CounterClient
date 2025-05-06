@@ -7,7 +7,8 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.mpsoftworks.data.room.entity.CounterEntity
 import com.mpsoftworks.data.room.entity.CounterGroupEntity
-import java.util.UUID
+import kotlin.uuid.ExperimentalUuidApi
+import kotlin.uuid.Uuid
 
 /**
  * Common interface for using in counters DB
@@ -17,13 +18,13 @@ interface CountersDao {
     /**
      * Get all created counters
      */
-    @Query("SELECT * FROM COUNTERS")
+    @Query("SELECT * FROM counters")
     fun getCounters(): List<CounterEntity>
 
     /**
      * Get all created groups
      */
-    @Query("SELECT * FROM COUNTER_GROUP")
+    @Query("SELECT * FROM counter_group")
     fun getGroups(): List<CounterGroupEntity>
 
     //TODO("remake using custom sql query with counterID s")
@@ -36,8 +37,9 @@ interface CountersDao {
     /**
      * Get list of counters from selected [groupID]
      */
-    @Query("SELECT * FROM COUNTERS WHERE COUNTERS.group_id = :groupID")
-    fun getCurrentCounters(groupID: UUID): List<CounterEntity>
+    @OptIn(ExperimentalUuidApi::class)
+    @Query("SELECT * FROM counters WHERE counters.group_id = :groupID")
+    fun getCurrentCounters(groupID: Uuid): List<CounterEntity>
 
     /**
      * Insert new or udates existing counter [entity]

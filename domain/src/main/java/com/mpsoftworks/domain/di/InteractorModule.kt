@@ -1,5 +1,6 @@
 package com.mpsoftworks.domain.di
 
+import com.mpsoftworks.data.api.CounterDbApi
 import com.mpsoftworks.data.repository.RoomDbCounterRepository
 import com.mpsoftworks.data.room.dao.CountersDao
 import dagger.Module
@@ -14,7 +15,7 @@ internal class InteractorModule {
 
     @Provides
     @Singleton
-    fun provideCounterDbApi(counterDao: CountersDao) =
+    fun provideCounterDbApi(counterDao: CountersDao): CounterDbApi =
         RoomDbCounterRepository(counterDao)
 
 }

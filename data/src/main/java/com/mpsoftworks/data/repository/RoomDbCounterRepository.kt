@@ -9,16 +9,18 @@ import com.mpsoftworks.data.room.entity.CounterEntity
 import com.mpsoftworks.data.room.entity.CounterGroupEntity
 import com.mpsoftworks.data.utils.toBitmap
 import com.mpsoftworks.data.utils.toByteArray
-import java.util.UUID
 import javax.inject.Inject
+import kotlin.uuid.ExperimentalUuidApi
+import kotlin.uuid.Uuid
 
 /**
  *
  */
+@OptIn(ExperimentalUuidApi::class)
 class RoomDbCounterRepository @Inject constructor(private val counterDao: CountersDao) :
     CounterDbApi {
 
-    override fun getCounterList(counterGroupId: UUID): Result<List<Counter>> {
+    override fun getCounterList(counterGroupId: Uuid): Result<List<Counter>> {
         return try {
             Result.success(
                 counterDao.getCurrentCounters(counterGroupId).map { entity ->
@@ -30,7 +32,7 @@ class RoomDbCounterRepository @Inject constructor(private val counterDao: Counte
         }
     }
 
-    override fun addOrUpdateCounter(counter: Counter, groupId: UUID): Result<Boolean> {
+    override fun addOrUpdateCounter(counter: Counter, groupId: Uuid): Result<Boolean> {
         return try {
             val counterIDs = counterDao.getCurrentCounters(groupId).map { entity -> entity.id }
 
@@ -41,7 +43,7 @@ class RoomDbCounterRepository @Inject constructor(private val counterDao: Counte
         }
     }
 
-    override fun deleteCounters(counters: List<Counter>, groupId: UUID): Result<Unit> {
+    override fun deleteCounters(counters: List<Counter>, groupId: Uuid): Result<Unit> {
         return try {
             counterDao.deleteCounterList(counters.map { entity ->
                 entity.toCounterEntity(groupId)
@@ -65,6 +67,7 @@ class RoomDbCounterRepository @Inject constructor(private val counterDao: Counte
         }
     }
 
+    @OptIn(ExperimentalUuidApi::class)
     override fun addOrUpdateGroup(group: CounterGroup): Result<Boolean> {
         return try {
             val groupIDs = counterDao.getGroups().map { entity -> entity.id }
@@ -86,12 +89,12 @@ class RoomDbCounterRepository @Inject constructor(private val counterDao: Counte
 
     //---------------------------------------------------------------------------------------------
 
-    private fun Counter.toCounterEntity(groupId: UUID): CounterEntity {
-        return CounterEntity(id, header, text, value.v, canDecrease, groupId)
+    private fun Counter.toCounterEntity(groupId: Uuid): CounterEntity {
+        return CounterEntity(id, header, text, value.v?.toDouble(), canDecrease, groupId)
     }
 
     private fun CounterEntity.toCounter(): Counter {
-        return Counter(id, header, text, CounterValue(value ?: -1))
+        return Counter(id, header, text, CounterValue(value?.toSmartNumber() ?: -1))
     }
 
     private fun CounterGroupEntity.toCounterGroup(counters: List<Counter>): CounterGroup {
@@ -100,6 +103,20 @@ class RoomDbCounterRepository @Inject constructor(private val counterDao: Counte
 
     private fun CounterGroup.toCounterGroupEntity(): CounterGroupEntity {
         return CounterGroupEntity(id, title, color, bitmap.toByteArray())
+    }
+
+    private fun Double.toSmartNumber(): Number {
+        return if (this % 1.0 == 0.0) {
+            // Если дробная часть 0, возвращаем Int (если помещается) или Long
+            val longValue = this.toLong()
+            if (longValue <= Int.MAX_VALUE && longValue >= Int.MIN_VALUE) {
+                longValue.toInt()
+            } else {
+                longValue
+            }
+        } else {
+            this
+        }
     }
 
     private companion object {

@@ -3,6 +3,8 @@ package com.mpsoftworks.data.api
 import com.mpsoftworks.data.model.Counter
 import com.mpsoftworks.data.model.CounterGroup
 import java.util.UUID
+import kotlin.uuid.ExperimentalUuidApi
+import kotlin.uuid.Uuid
 
 /**
  * API for accessing data from database
@@ -12,18 +14,21 @@ interface CounterDbApi {
     /**
      * returns list of counters
      */
-    fun getCounterList(counterGroupId: UUID): Result<List<Counter>>
+    @OptIn(ExperimentalUuidApi::class)
+    fun getCounterList(counterGroupId: Uuid): Result<List<Counter>>
 
     /**
      * add new counter if [counter] does not exists, otherwise update existing.
      * @return Returns true if new counter was added
      */
-    fun addOrUpdateCounter(counter: Counter, groupId: UUID): Result<Boolean>
+    @OptIn(ExperimentalUuidApi::class)
+    fun addOrUpdateCounter(counter: Counter, groupId: Uuid): Result<Boolean>
 
     /**
      * delete existing [counters]
      */
-    fun deleteCounters(counters: List<Counter>, groupId: UUID): Result<Unit>
+    @OptIn(ExperimentalUuidApi::class)
+    fun deleteCounters(counters: List<Counter>, groupId: Uuid): Result<Unit>
 
     //---------------------------------------------------------------------------------------------
 

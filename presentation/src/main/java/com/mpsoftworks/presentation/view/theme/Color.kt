@@ -258,6 +258,8 @@ val DeepOrange8 = Color(color = 0xffe64a19)
 val DeepOrange9 = Color(color = 0xffd84315)
 val DeepOrange10 = Color(color = 0xffbf360c)
 
+val Transparent = Color(color = 0x00000000)
+
 
 
 

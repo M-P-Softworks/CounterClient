@@ -17,10 +17,10 @@ drawerState: DrawerState
 ) {
    NavHost(
        navController = navController,
-       startDestination = CounterNavDestinations.MainScreen.route.routeString
+       startDestination = CounterNavDestinations.CounterScreen.route.routeString
    ){
-       addMainScreen(navController, this, drawerState)
        addCounterScreen(navController, this)
+       addMainScreen(navController, this, drawerState)
        addSettingsScreen(navController, this)
        addAboutScreen(navController, this)
 

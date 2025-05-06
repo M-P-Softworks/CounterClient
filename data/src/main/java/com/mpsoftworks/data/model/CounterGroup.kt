@@ -2,6 +2,8 @@ package com.mpsoftworks.data.model
 
 import android.graphics.Bitmap
 import java.util.*
+import kotlin.uuid.ExperimentalUuidApi
+import kotlin.uuid.Uuid
 
 /**
  * Class contains counter group details
@@ -10,8 +12,9 @@ import java.util.*
  * @property color group color
  * @property listCounter list of counters current group
  */
+@OptIn(ExperimentalUuidApi::class)
 data class CounterGroup(
-    val id: UUID,
+    val id: Uuid,
     val title:String,
     val color: Int,
     val bitmap: Bitmap,

@@ -1,19 +1,25 @@
 plugins {
-    id(libs.plugins.android.application.get().pluginId)
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.hilt)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.ksp)
 }
 
 android {
     namespace = "com.mpsoftworks.counterclient"
-    compileSdk = 34
+    compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
-        minSdk = 26
+        minSdk = libs.versions.minSdk.get().toInt()
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
     }
-
+    packaging {
+        resources {
+            excludes += "META-INF/gradle/incremental.annotation.processors"
+        }
+    }
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -37,6 +43,11 @@ android {
 dependencies {
     implementation(catalog.core.ktx)
     implementation (catalog.androidx.appcompat.appcompat)
+
+    // DI Dagger
+    implementation (catalog.hilt)
+    implementation (catalog.hilt.compiler)
+    ksp (catalog.hilt.compiler)
 
     //project
     implementation(project(":data"))

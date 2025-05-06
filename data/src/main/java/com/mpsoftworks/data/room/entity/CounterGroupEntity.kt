@@ -3,7 +3,8 @@ package com.mpsoftworks.data.room.entity
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import java.util.UUID
+import kotlin.uuid.ExperimentalUuidApi
+import kotlin.uuid.Uuid
 
 /**
  * Entity representing groups of counters.
@@ -12,11 +13,12 @@ import java.util.UUID
  * @property color group color
  * @property bitmapArray group icon
 */
+@OptIn(ExperimentalUuidApi::class)
 @Entity(tableName = "counter_group")
 data class CounterGroupEntity (
     @PrimaryKey
     @ColumnInfo(name = "id")
-    val id: UUID,
+    val id: Uuid,
 
     @ColumnInfo(name = "title")
     val title: String?,

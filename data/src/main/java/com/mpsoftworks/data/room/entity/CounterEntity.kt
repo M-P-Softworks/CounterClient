@@ -3,7 +3,8 @@ package com.mpsoftworks.data.room.entity
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import java.util.UUID
+import kotlin.uuid.ExperimentalUuidApi
+import kotlin.uuid.Uuid
 
 /**
  * Entity of counter entity.
@@ -13,11 +14,12 @@ import java.util.UUID
  * @property canDecrease can value be decreased
  * @property groupId UUID identified each group
  */
+@OptIn(ExperimentalUuidApi::class)
 @Entity(tableName = "counters")
 data class CounterEntity(
     @PrimaryKey
     @ColumnInfo(name = "id")
-    val id: UUID,
+    val id: Uuid,
 
     @ColumnInfo(name = "title")
     val header: String?,
@@ -26,11 +28,11 @@ data class CounterEntity(
     val text: String?,
 
     @ColumnInfo(name = "value")
-    val value: Number?,
+    val value: Double?,
 
     @ColumnInfo(name = "can_decrease")
     val canDecrease: Boolean? = false,
 
     @ColumnInfo(name = "group_id")
-    val groupId: UUID
+    val groupId: Uuid
 )

@@ -32,7 +32,8 @@ public fun lightThemeMap(): Map<ThemeEntities, Color> = mapOf(
     ThemeEntities.ElementContentPrimaryWarning to Brown9,
     ThemeEntities.ElementContentSecondary0 to Cyan10,
     ThemeEntities.ElementContentSecondary1 to Teal10,
-    ThemeEntities.ElementContentSecondaryWarning to Red10
+    ThemeEntities.ElementContentSecondaryWarning to Red10,
+    ThemeEntities.Transparent to Color.Transparent
 )
 
 public fun darkThemeMap(): Map<ThemeEntities, Color> = mapOf(
@@ -56,7 +57,8 @@ public fun darkThemeMap(): Map<ThemeEntities, Color> = mapOf(
     ThemeEntities.ElementContentPrimaryWarning to Brown9,
     ThemeEntities.ElementContentSecondary0 to DeepPurple5,
     ThemeEntities.ElementContentSecondary1 to DeepPurple6,
-    ThemeEntities.ElementContentSecondaryWarning to Red10
+    ThemeEntities.ElementContentSecondaryWarning to Red10,
+    ThemeEntities.Transparent to Color.Transparent
 )
 
 

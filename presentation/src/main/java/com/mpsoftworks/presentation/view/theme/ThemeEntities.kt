@@ -21,6 +21,7 @@ public  enum class ThemeEntities {
     ElementContentPrimaryWarning,
     ElementContentSecondary0,
     ElementContentSecondary1,
-    ElementContentSecondaryWarning
+    ElementContentSecondaryWarning,
+    Transparent
 }
 

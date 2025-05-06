@@ -1,14 +1,17 @@
 plugins {
     alias(libs.plugins.android.library)
+    alias(libs.plugins.hilt)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.ksp)
 }
 
 android {
     namespace = "com.mpsoftworks.presentation"
-    compileSdk = 34
+    compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
-        minSdk = 26
+        minSdk = libs.versions.minSdk.get().toInt()
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -30,9 +33,9 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-    composeOptions{
-        kotlinCompilerExtensionVersion = "1.5.3"
-    }
+//    composeOptions{
+//        kotlinCompilerExtensionVersion = libs.versions.compose.compiler.get()
+//    }
     kotlinOptions {
         jvmTarget = "17"
     }
@@ -42,7 +45,11 @@ android {
 dependencies {
     implementation(catalog.core.ktx)
     implementation(catalog.androidx.appcompat.appcompat)
-    implementation(catalog.hilt)
+
+    // DI Dagger
+    implementation (catalog.hilt)
+    implementation (catalog.hilt.compiler)
+    ksp (catalog.hilt.compiler)
     implementation(catalog.hilt.navigation.compose)
 
     //navigation

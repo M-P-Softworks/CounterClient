@@ -4,13 +4,15 @@ import com.mpsoftworks.data.api.CounterDbApi
 import com.mpsoftworks.data.model.Counter
 import com.mpsoftworks.data.model.CounterGroup
 import com.mpsoftworks.domain.model.InitialCountersData
-import java.util.UUID
 import javax.inject.Inject
+import kotlin.uuid.ExperimentalUuidApi
+import kotlin.uuid.Uuid
 
 /**
  * Interactor of counter. Mekes basic interoperability with data layer.
  * should be abstracted when needs to be synced with server.
  */
+@OptIn(ExperimentalUuidApi::class)
 class CounterInteractor @Inject constructor(
     private val counterDbApi: CounterDbApi
     // ToDo("add metrics")
@@ -26,17 +28,17 @@ class CounterInteractor @Inject constructor(
         return InitialCountersData(groups, counters)
     }
 
-    fun updateCounter(counter: Counter, groupId: UUID) =
+    fun updateCounter(counter: Counter, groupId: Uuid) =
         counterDbApi.addOrUpdateCounter(counter, groupId)
 
-    fun createNewCounter(counter: Counter, groupId: UUID) =
+    fun createNewCounter(counter: Counter, groupId: Uuid) =
         counterDbApi.addOrUpdateCounter(counter, groupId)
 
-    fun deleteCounters(counters: List<Counter>,  groupId: UUID) =
+    fun deleteCounters(counters: List<Counter>,  groupId: Uuid) =
         counterDbApi.deleteCounters(counters,  groupId)
 
 
-    fun getCounters(groupId: UUID) =
+    fun getCounters(groupId: Uuid) =
         counterDbApi.getCounterList(groupId)
 
 //-------------------------------------------------------------------------------------------------

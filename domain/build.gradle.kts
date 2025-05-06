@@ -1,14 +1,16 @@
 plugins {
     alias(libs.plugins.android.library)
+    alias(libs.plugins.hilt)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.ksp)
 }
 
 android {
     namespace = "com.mpsoftworks.domain"
-    compileSdk = 34
+    compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
-        minSdk = 26
+        minSdk = libs.versions.minSdk.get().toInt()
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -21,6 +23,11 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+        }
+    }
+    packaging {
+        resources {
+            excludes += "META-INF/gradle/incremental.annotation.processors"
         }
     }
     compileOptions {
@@ -38,7 +45,12 @@ dependencies {
     implementation(catalog.core.ktx)
     implementation(catalog.androidx.appcompat.appcompat)
     testImplementation(catalog.junit.junit)
-    implementation(catalog.hilt)
+
+    // DI Dagger
+    implementation (catalog.hilt)
+    implementation (catalog.hilt.compiler)
+    ksp (catalog.hilt.compiler)
+
     androidTestImplementation(catalog.androidx.test.ext.junit)
     androidTestImplementation(catalog.espresso.core)
 
