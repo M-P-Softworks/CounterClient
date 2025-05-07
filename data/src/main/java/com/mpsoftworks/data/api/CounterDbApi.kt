@@ -1,8 +1,7 @@
 package com.mpsoftworks.data.api
 
-import com.mpsoftworks.data.model.Counter
-import com.mpsoftworks.data.model.CounterGroup
-import java.util.UUID
+import com.mpsoftworks.model.Counter
+import com.mpsoftworks.model.CounterGroup
 import kotlin.uuid.ExperimentalUuidApi
 import kotlin.uuid.Uuid
 

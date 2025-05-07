@@ -1,9 +1,9 @@
 package com.mpsoftworks.data.repository
 
+import com.mpsoftworks.model.Counter
+import com.mpsoftworks.model.CounterGroup
+import com.mpsoftworks.model.CounterValue
 import com.mpsoftworks.data.api.CounterDbApi
-import com.mpsoftworks.data.model.Counter
-import com.mpsoftworks.data.model.CounterGroup
-import com.mpsoftworks.data.model.CounterValue
 import com.mpsoftworks.data.room.dao.CountersDao
 import com.mpsoftworks.data.room.entity.CounterEntity
 import com.mpsoftworks.data.room.entity.CounterGroupEntity
@@ -102,7 +102,7 @@ class RoomDbCounterRepository @Inject constructor(private val counterDao: Counte
     }
 
     private fun CounterGroup.toCounterGroupEntity(): CounterGroupEntity {
-        return CounterGroupEntity(id, title, color, bitmap.toByteArray())
+        return CounterGroupEntity(id, title, color, bitmap?.toByteArray() ?: byteArrayOf())
     }
 
     private fun Double.toSmartNumber(): Number {

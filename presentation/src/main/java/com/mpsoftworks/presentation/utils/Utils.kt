@@ -7,8 +7,8 @@ import android.graphics.BitmapFactory
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.asAndroidBitmap
-import com.mpsoftworks.data.model.CounterGroup
-import com.mpsoftworks.domain.model.InitialCountersData
+import com.mpsoftworks.model.CounterGroup
+import com.mpsoftworks.model.InitialCountersData
 import com.mpsoftworks.presentation.model.CounterGroupImage
 import com.mpsoftworks.presentation.model.ListItem
 import com.mpsoftworks.presentation.model.main.MainListState
@@ -38,7 +38,7 @@ internal fun InitialCountersData.toMainListState(): MainListState {
 
 private fun createCounterGroupImage(group: CounterGroup): CounterGroupImage {
 
-    return CounterGroupImage(group.bitmap.asImageBitmap(), Color(group.color))
+    return CounterGroupImage(group.bitmap?.asImageBitmap(), Color(group.color))
 }
 
 fun ImageBitmap.toByteArray(imageBitmap: ImageBitmap): ByteArray {

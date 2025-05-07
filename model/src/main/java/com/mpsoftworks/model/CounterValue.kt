@@ -1,4 +1,4 @@
-package com.mpsoftworks.data.model
+package com.mpsoftworks.model
 
 /**
  * Class that contains counter value

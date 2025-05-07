@@ -1,7 +1,7 @@
 /*
 package com.mpsoftworks.data.usecase.implementation
 
-import com.mpsoftworks.data.model.Counter
+import com.mpsoftworks.domain.model.Counter
 import com.mpsoftworks.data.usecase.CounterUseCase
 
 class CounterImpl : CounterUseCase {

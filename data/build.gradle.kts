@@ -51,4 +51,6 @@ dependencies {
     implementation (catalog.hilt.compiler)
     ksp (catalog.hilt.compiler)
 
+    //project
+    implementation(project(":model"))
 }

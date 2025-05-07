@@ -27,13 +27,21 @@ class CounterScreenViewModel @Inject internal constructor(
 
     fun onAction(action: CounterActions) {
         when (action) {
-            CounterActions.IncreaseCounterPressed -> sendEvent(CounterActions.IncreaseCounterPressed)
-            CounterActions.DecreaseCounterPressed -> sendEvent(CounterActions.DecreaseCounterPressed)
+            CounterActions.IncreaseCounterPressed -> increaseValue()
+            CounterActions.DecreaseCounterPressed -> decreaseValue()
         }
     }
 
     private fun defaultCounterScreenState(): CounterScreenState {
         return CounterScreenState()
+    }
+
+    private fun increaseValue() {
+
+    }
+
+    private fun decreaseValue() {
+
     }
 
     private fun sendEvent(event: CounterActions) = viewModelScope.launch {

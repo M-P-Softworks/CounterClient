@@ -1,6 +1,5 @@
-package com.mpsoftworks.data.model
+package com.mpsoftworks.model
 
-import java.util.*
 import kotlin.uuid.ExperimentalUuidApi
 import kotlin.uuid.Uuid
 
@@ -15,10 +14,10 @@ import kotlin.uuid.Uuid
  */
 @OptIn(ExperimentalUuidApi::class)
 data class Counter (
-    val id: Uuid = Uuid.random(),
-    val header: String?,
-    val text: String?,
-    val value: CounterValue,
+    val id: Uuid = Uuid.NIL,
+    val header: String? = null,
+    val text: String? = null,
+    val value: CounterValue = CounterValue(0),
     val canDecrease: Boolean? = false,
     val isFloat: Boolean? = false
 )

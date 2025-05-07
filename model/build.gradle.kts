@@ -1,12 +1,10 @@
 plugins {
     alias(libs.plugins.android.library)
-    alias(libs.plugins.hilt)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.ksp)
 }
 
 android {
-    namespace = "com.mpsoftworks.domain"
+    namespace = "com.mpsoftworks.model"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
@@ -25,11 +23,6 @@ android {
             )
         }
     }
-    packaging {
-        resources {
-            excludes += "META-INF/gradle/incremental.annotation.processors"
-        }
-    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -37,25 +30,11 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
-    buildToolsVersion = "34.0.0"
 }
 
 dependencies {
 
-    implementation(catalog.core.ktx)
-    implementation(catalog.androidx.appcompat.appcompat)
-    testImplementation(catalog.junit.junit)
-
-    // DI Dagger
-    implementation (catalog.hilt)
-    implementation (catalog.hilt.compiler)
-    ksp (catalog.hilt.compiler)
-
-    androidTestImplementation(catalog.androidx.test.ext.junit)
-    androidTestImplementation(catalog.espresso.core)
-
-    //project
-    implementation(project(":data"))
-    implementation(project(":model"))
-
+    implementation(libs.core.ktx)
+    implementation(libs.androidx.appcompat.appcompat)
+    implementation(libs.material)
 }

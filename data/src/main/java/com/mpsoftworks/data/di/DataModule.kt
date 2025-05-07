@@ -1,7 +1,6 @@
 package com.mpsoftworks.data.di
 
 import android.content.Context
-import android.util.Log
 import com.mpsoftworks.data.room.CountersDB
 import com.mpsoftworks.data.room.dao.CountersDao
 import dagger.Module

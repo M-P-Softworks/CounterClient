@@ -1,7 +1,6 @@
-package com.mpsoftworks.data.model
+package com.mpsoftworks.model
 
 import android.graphics.Bitmap
-import java.util.*
 import kotlin.uuid.ExperimentalUuidApi
 import kotlin.uuid.Uuid
 
@@ -14,9 +13,9 @@ import kotlin.uuid.Uuid
  */
 @OptIn(ExperimentalUuidApi::class)
 data class CounterGroup(
-    val id: Uuid,
-    val title:String,
-    val color: Int,
-    val bitmap: Bitmap,
-    val listCounter: List<Counter>?
+    val id: Uuid = Uuid.NIL,
+    val title:String = "",
+    val color: Int = 0,
+    val bitmap: Bitmap? = null,
+    val listCounter: List<Counter>? = null
 )

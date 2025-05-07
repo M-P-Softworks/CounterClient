@@ -47,7 +47,6 @@ internal fun CounterScreen(
             decreaseAction = { onAction.invoke(CounterActions.DecreaseCounterPressed) }
         )
     }
-
 }
 
 @Composable
