@@ -90,7 +90,7 @@ class RoomDbCounterRepository @Inject constructor(private val counterDao: Counte
     //---------------------------------------------------------------------------------------------
 
     private fun Counter.toCounterEntity(groupId: Uuid): CounterEntity {
-        return CounterEntity(id, header, text, value.v?.toDouble(), canDecrease, groupId)
+        return CounterEntity(id, header, text, counterValue.v?.toDouble(), canDecrease, groupId)
     }
 
     private fun CounterEntity.toCounter(): Counter {

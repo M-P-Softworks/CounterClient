@@ -65,7 +65,6 @@ dependencies {
     implementation(catalog.compose.ui.tooling.preview)
     implementation(catalog.compose.material3)
 
-
     //project
     implementation(project(":domain"))
     implementation(project(":model"))

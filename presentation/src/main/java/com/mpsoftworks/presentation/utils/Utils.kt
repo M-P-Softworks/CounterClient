@@ -28,7 +28,7 @@ internal fun InitialCountersData.toMainListState(): MainListState {
                 itemGroupImage = createCounterGroupImage(group),
                 itemHeader = counter.header ?: "No title",
                 itemText = counter.text ?: "Unnamed",
-                itemCurrentValue = counter.value.v.toString()
+                itemCurrentValue = counter.counterValue.v.toString()
             )
         } ?: emptyList()
     }

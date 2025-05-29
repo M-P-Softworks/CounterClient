@@ -30,10 +30,7 @@ class CounterInteractor @Inject constructor(
         return InitialCountersData(groups, counters)
     }
 
-    fun increaseCounter(counter: Counter, groupId: Uuid) =
-        counterDbApi.addOrUpdateCounter(counter, groupId)
-
-    fun decreaaseCounter(counter: Counter, groupId: Uuid) =
+    fun updateCounterValue(counter: Counter, groupId: Uuid) =
         counterDbApi.addOrUpdateCounter(counter, groupId)
 
     fun createNewCounter(counter: Counter, groupId: Uuid) =

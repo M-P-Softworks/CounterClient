@@ -6,7 +6,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.mpsoftworks.presentation.view.counter.CounterScreen
+import com.mpsoftworks.presentation.view.counter.CounterIntScreen
 import com.mpsoftworks.presentation.view.main.MainScreen
 import com.mpsoftworks.presentation.view.settings.SettingsScreen
 
@@ -42,7 +42,7 @@ private fun addCounterScreen(
     navGraphBuilder: NavGraphBuilder
 ) {
     navGraphBuilder.composable(route = CounterNavDestinations.CounterScreen.route.routeString) {
-        CounterScreen(navController)
+        CounterIntScreen(navController)
     }
 }
 

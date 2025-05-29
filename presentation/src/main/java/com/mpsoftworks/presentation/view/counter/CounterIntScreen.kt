@@ -1,5 +1,6 @@
 package com.mpsoftworks.presentation.view.counter
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Box
@@ -22,15 +23,17 @@ import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
-import com.mpsoftworks.presentation.model.CounterValue
+import com.mpsoftworks.model.CounterValue
 import com.mpsoftworks.presentation.model.counter.CounterActions
 import com.mpsoftworks.presentation.view.theme.AppTheme
+import com.mpsoftworks.presentation.view.theme.ThemeEntities
+import com.mpsoftworks.presentation.view.theme.getColor
 
 @Composable
-internal fun CounterScreen(
+internal fun CounterIntScreen(
     navController: NavHostController
 ) {
-    val viewModel: CounterScreenViewModel = hiltViewModel<CounterScreenViewModel>()
+    val viewModel = hiltViewModel<CounterIntViewModel>()
 
     val state = viewModel.counterScreenState.collectAsState()
     val onAction: (CounterActions) -> Unit = remember { { viewModel.onAction(it) } }
@@ -57,11 +60,14 @@ private fun CounterScreenContent(
     decreaseAction: (() -> Unit)? = null
 ) {
     ChangeValueButton(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier
+            .fillMaxSize()
+            .background(
+                color = ThemeEntities.BackgroundPrimary0.getColor()
+            ),
         increaseClick = increaseAction,
         decreaseButton = decreaseAction
     )
-
 
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -81,7 +87,7 @@ private fun Counter(
     Text(
         modifier = modifier
             .padding(horizontal = AppTheme.dimensions.paddingM),
-        text = value.value.toString(),
+        text = value.toString(),
         textAlign = TextAlign.Center,
         style = AppTheme.typography.h2,
         maxLines = 1

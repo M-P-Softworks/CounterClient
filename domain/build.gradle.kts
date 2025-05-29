@@ -41,7 +41,6 @@ android {
 }
 
 dependencies {
-
     implementation(catalog.core.ktx)
     implementation(catalog.androidx.appcompat.appcompat)
     testImplementation(catalog.junit.junit)

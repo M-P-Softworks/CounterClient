@@ -1,7 +1,7 @@
 package com.mpsoftworks.presentation.model.counter
 
 import androidx.compose.foundation.gestures.Orientation
-import com.mpsoftworks.presentation.model.CounterValue
+import com.mpsoftworks.model.CounterValue
 
 /**
  * Class contains counter details in app

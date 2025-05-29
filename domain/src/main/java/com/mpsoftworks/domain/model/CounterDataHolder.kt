@@ -1,46 +1,42 @@
-package com.mpsoftworks.presentation.view.common
+package com.mpsoftworks.domain.model
 
 import com.mpsoftworks.model.Counter
 import com.mpsoftworks.model.CounterGroup
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.launch
+import javax.inject.Inject
+import javax.inject.Singleton
 import kotlin.uuid.ExperimentalUuidApi
 
+@Singleton
 @OptIn(ExperimentalUuidApi::class)
-class SharedCounterViewModel : ViewModel() {
+class CounterDataHolder @Inject constructor() {
 
     private val _selectedCounter = MutableStateFlow(Counter())
     private val _selectedGroup = MutableStateFlow(CounterGroup())
 
     /**
-     *
+     * Stores user selected counter
      */
     val selectedCounter: StateFlow<Counter> = _selectedCounter.asStateFlow()
 
     /**
-     *
+     * Stores user selected counter group
      */
     val selectedGroup: StateFlow<CounterGroup> = _selectedGroup.asStateFlow()
 
     /**
-     *
+     * Updates user selected counter
      */
-    fun selectCounter(counter: Counter) {
-        viewModelScope.launch {
-            _selectedCounter.emit(counter)
-        }
+    suspend fun selectCounter(counter: Counter) {
+        _selectedCounter.emit(counter)
     }
 
     /**
-     *
+     * Updates user selected counter group
      */
-    fun selectGroup(group: CounterGroup) {
-        viewModelScope.launch {
-            _selectedGroup.emit(group)
-        }
+    suspend fun selectGroup(group: CounterGroup) {
+        _selectedGroup.emit(group)
     }
 }
